@@ -1,3 +1,17 @@
+p {
+    margin: 0 !important;
+}
+.newsImg img{
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: .5em;
+}
+.allNewses {
+    background: #cacaca;
+    padding: 1rem;
+    border-radius: 0.5em;
+}
 .cetegoriesMenu {
     display: flex;
 }

@@ -1,4 +1,6 @@
+// Categories
 function getCategoriesData() {
+
 
     const categoriesUrl = 'https://openapi.programming-hero.com/api/news/categories'
 
@@ -39,3 +41,6 @@ function displayCetegories(cetegoriesData){
 
 
 getCategoriesData()
+
+
+
