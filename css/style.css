@@ -1,3 +1,6 @@
 .cetegoriesMenu {
     display: flex;
 }
+.viewSelect {
+    width: max-content;
+}
