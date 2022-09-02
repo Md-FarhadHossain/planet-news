@@ -18,3 +18,20 @@ p {
 .viewSelect {
     width: max-content;
 }
+.author-img {
+    width: 40px;
+    border-radius: 100%;
+}
+.newses {
+    background: #f4f3f3;
+    padding: 1rem;
+    border-radius: 0.5em;
+    margin: 1rem 0;
+}
+.news-details {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
