@@ -23,9 +23,17 @@ function getCategoriesData() {
 function displayCetegories(cetegoriesData){
     console.log(cetegoriesData)
 
-    cetegoriesData.map(categorie => {
-        console.log(categorie)
-    })
+    document.getElementById('menuBar').innerHTML = `
+            ${cetegoriesData.map(categorie => {
+                return `
+                <li class="nav-item">
+                    <a class="nav-link" href="#">${categorie.category_name}</a>
+                </li>
+                `
+            }).join('')}
+        `
+
+    
 
 }
 
