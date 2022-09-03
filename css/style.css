@@ -46,3 +46,40 @@ p {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+@media screen and (max-width: 767px) {
+    .newses {
+        flex-direction: column;
+    }
+    .newsDetails {
+        padding: 1rem !important;
+    }
+    .newses {
+        padding: 0 ;
+    }
+    .authorAndView {
+        flex-direction: column;
+        align-items: flex-start !important;
+        padding: 1.5rem 0;
+        gap: 0.8rem;
+    }
+    .newsImg {
+        text-align: center;
+        padding-top: 2rem;
+    }
+    /* .modalBtn {
+        display: block;
+        padding: 1rem 0;
+    }
+    .modalBtn button {
+        position: absolute;
+        width: 75%;
+    } */
+
+    .viewSelectContain {
+        flex-direction: column;
+    }
+    .viewSelectContain > div {
+        padding: .6rem 0;
+    }
+}

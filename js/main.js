@@ -156,13 +156,13 @@ function displayNewses(newsesData) {
                 </div>
                 
     
-                <article class="ps-5 d-flex flex-column justify-content-between">
+                <article class="newsDetails ps-5 d-flex flex-column justify-content-between">
     
                     <h2>${news.title ? news.title : 'No data found'}</h2>
                     <p class='news-details'>${news.details ? news.details : 'No data found'}</p>
     
     
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center authorAndView">
                                <!-- Author -->
                         <div class="d-flex justify-content-between align-items-center">
     
@@ -192,9 +192,11 @@ function displayNewses(newsesData) {
     
     
                     <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${news._id}">
-                        See Full Details
-                        </button>
+                        <div class='modalBtn'>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${news._id}">
+                            See Full Details
+                            </button>
+                        </div>
     
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal${news._id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
