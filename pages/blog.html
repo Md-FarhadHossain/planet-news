@@ -12,14 +12,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/blogStyle.css">
 </head>
-<body>
+<body id="blogBody">
 
         <!-- Header -->
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg bg-light" id="blogNav">
             <div class="container">
     
                 <!-- Logo -->
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand logo" href="../index.html">
                     PlanetNews 24
                 </a>
     
@@ -36,7 +36,15 @@
                 <!-- Menu -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-lg-0">
-    
+
+                        <li class="nav-item me-3 d-flex align-items-center">
+                            <div id="dark-mode-switch" class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
+                              </div>
+                              
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Home</a>
                         </li>
@@ -55,8 +63,8 @@
     <main>
         <article>
             <!-- question 1 -->
-            <div>
-                <h2>Q: Difference between var, let, const</h2>
+            <div class="questionSection">
+                <h2 class="question">Q: Difference between var, let, const</h2>
                 <p>
                  
                    <strong>Ans:</strong> let is used to declare the variable or initialize a variable.let variable can be updated in future.Its block scope and we cannot redeclare it. let cannot redeclare a value but we can update the value.
@@ -70,8 +78,8 @@
 
 
             <!-- question 2 -->
-            <div>
-                <h2>Q: Dfference between arrow function and regular function.</h2>
+            <div class="questionSection">
+                <h2 class="question">Q: Dfference between arrow function and regular function.</h2>
                 <p>
                     <strong>Ans:</strong> It's a shorter syntax and thus requires less code. Arrow functions are best for callbacks or methods like map , reduce , or forEach.
                     Regular functions created using function declarations or expressions are constructible and callable.
@@ -83,8 +91,8 @@
 
 
             <!-- question 3 -->
-            <div>
-                <h2>Q: Difference between map, filter, forEach, find</h2>
+            <div class="questionSection">
+                <h2 class="question">Q: Difference between map, filter, forEach, find</h2>
                 <p>
                     <strong>Ans:</strong> The map() method creates an entirely new array
                     forEach just loop over the array and executes the callback but filter executes the callback and check its return value.forEach just loop over the array and executes the callback but filter executes the callback and check its return value.
@@ -94,8 +102,8 @@
             </div>
 
             <!-- question 4 -->
-            <div>
-                <h2>Q: Why you should use template string</h2>
+            <div class="questionSection">
+                <h2 class="question">Q: Why you should use template string</h2>
                 <p><strong>Ans:</strong> Multi-line strings: A single string can span two or more lines. Expression Interpolation: Javascript variables and expressions can be inserted directly in the string</p>
             </div>
 
@@ -103,7 +111,8 @@
     </main>
 
 
-
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

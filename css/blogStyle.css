@@ -1,10 +1,27 @@
 body {
-    background-color: #18191a;
-    color: #b0b3b8;
+    background-color: #f0f2f5;
+    color: #000000;
+}
+.bodyDesign {
+    background: #18191a;
+}
+.questionDesign {
+    background: #242526;
+    color: #fff;
+}
+.questionTitle {
+    color: #cecece;
+}
+.blogNav {
+    background-color: rgb(33,37,41) !important;
+}
+
+.blogNavLink {
+    color: #fff !important;
 }
 
 article>div {
-    background-color: #242526;
+    background-color: #fff;
     width: 60%;
     margin: 1rem auto;
     padding: 1rem;
@@ -12,7 +29,13 @@ article>div {
 }
 
 h2 {
-    color: #ddd;
-    border-bottom: 1px solid #3f3f3f;
+    color: #050505;
+    border-bottom: 1px solid #000000;
     padding-bottom: 1.5rem;
+}
+.logo {
+    font-weight: 600;
+    background: linear-gradient(45deg, #0d6efd, #4dc6ff);
+    color: #fff;
+    padding: 0.5rem 1rem;
 }

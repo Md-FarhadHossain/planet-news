@@ -36,8 +36,8 @@ function displayCetegories(cetegoriesData) {
     document.getElementById('menuBar').innerHTML = `
             ${cetegoriesData.map(categorie => {
         return `
-                <li class="nav-item">
-                    <a class="nav-link" href="#">${categorie.category_name}</a>
+                <li class="nav-item nav-newsItem">
+                    <a class="nav-link nav-newsLink" href="#">${categorie.category_name}</a>
                 </li>
                 `
     }).join('')}
@@ -278,6 +278,26 @@ function displayNewses(newsesData) {
 }
 
 
+// Dark mode
+const darkModeSwitch = document.getElementById('dark-mode-switch')
+darkModeSwitch.addEventListener('click', () => {
+    const blogBody = document.getElementById('blogBody')
+    blogBody.classList.toggle('bodyDesign')
+   
+
+    document.querySelectorAll('.question').forEach(question => {
+        question.classList.toggle('questionTitle')
+    })
+
+    document.querySelectorAll('.questionSection').forEach(questionSec => {
+        questionSec.classList.toggle('questionDesign')
+    })
+    const blogNav = document.getElementById('blogNav')
+    blogNav.classList.toggle('blogNav')
+    document.querySelectorAll('nav#blogNav *').forEach(blogLink => {
+        blogLink.classList.toggle('blogNavLink')
+    })
+})
 
 
 

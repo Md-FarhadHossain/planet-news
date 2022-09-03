@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 
 body {
-    background-color: #f2f2f2;
+    background-color: #f0f2f5;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -16,7 +16,43 @@ p {
     object-fit: cover;
     border-radius: .5em;
 }
+.main-nav a {
+    background: white;
+    color: #2c2c2c;
+    padding: 0.5rem 1.4rem !important;
+    border-radius: 75.5em;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px #dcdcdc;
+}
 
+.nav-newsLink {  
+    background: white;
+    color: #2c2c2c;
+    padding: .5rem 1.4rem;
+    border-radius: 2.5em;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px #dcdcdc; 
+}
+.logo {
+    font-weight: 600;
+    background: linear-gradient(45deg, #0d6efd, #4dc6ff);
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+.nav-newsLink:hover,.modalBtn:hover,.main-nav a:hover {
+    box-shadow: none;  
+}
+.modalBtn button {
+    background: #2a2a2a;
+    color: #ffffff;
+    padding: 0.5rem 1.4rem;
+    border-radius: 0.5em;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px #dcdcdc;
+}
 .allNewses {
     /* background: #cacaca; */
     padding: 1rem;
@@ -92,5 +128,9 @@ p {
 
     .viewSelectContain>div {
         padding: .6rem 0;
+    }
+    .nav-newsItem {
+        flex-grow: 1;
+        text-align: center;
     }
 }
