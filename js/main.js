@@ -21,6 +21,11 @@ function getCategoriesData() {
 
 }
 
+setTimeout(() => {
+    document.getElementById('firstSpinner').classList.add('d-none')
+    document.getElementById('getNewsMessage').classList.remove('d-none')
+    document.getElementById('getNewsMessage').classList.add('d-block')
+},700)
 
 function displayCetegories(cetegoriesData) {
     // console.log(cetegoriesData)
@@ -47,6 +52,8 @@ function displayCetegories(cetegoriesData) {
         // })
         document.getElementById('categorieName').innerText = 'Click on category to get news!'
         menu.addEventListener('click', () => {
+
+            document.getElementById('getNewsMessage').classList.add('d-none')
 
             document.getElementById('allNews').innerHTML = `
             <div class="d-flex justify-content-center">
