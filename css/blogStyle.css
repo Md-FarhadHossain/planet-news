@@ -1,0 +1,16 @@
+body {
+    background-color: #18191a;
+    color: #b0b3b8;
+}
+article > div {
+    background-color: #242526;
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: .5em;
+}
+h2 {
+    color: #ddd;
+    border-bottom: 1px solid #3f3f3f;
+    padding-bottom: 1.5rem;
+}
