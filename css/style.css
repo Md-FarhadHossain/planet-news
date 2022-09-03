@@ -1,36 +1,44 @@
 body {
     /* background-color: #18191a; */
 }
+
 p {
     margin: 0 !important;
 }
-.newsImg img{
+
+.newsImg img {
     width: 250px;
     height: 300px;
     object-fit: cover;
     border-radius: .5em;
 }
+
 .allNewses {
     background: #cacaca;
     padding: 1rem;
     border-radius: 0.5em;
 }
+
 .cetegoriesMenu {
     display: flex;
 }
+
 .viewSelect {
     width: max-content;
 }
+
 .author-img {
     width: 40px;
     border-radius: 100%;
 }
+
 .newses {
     background: #f4f3f3;
     padding: 1rem;
     border-radius: 0.5em;
     margin: 1rem 0;
 }
+
 .news-details {
     overflow: hidden;
     text-overflow: ellipsis;

@@ -9,7 +9,7 @@ function getCategoriesData() {
         .then(data => {
 
             displayCetegories(data.data.news_category)
-            if (!data.status){
+            if (!data.status) {
                 const errorMeassage = `You have an error, Error status: ${res.status}`
                 throw new Error(errorMeassage)
             }
@@ -22,49 +22,50 @@ function getCategoriesData() {
 }
 
 
-function displayCetegories(cetegoriesData){
-    console.log(cetegoriesData)
+function displayCetegories(cetegoriesData) {
+    // console.log(cetegoriesData)
     // cetegoriesData.forEach(categorieId => {
     //     getNewsesData(categorieId.category_id)
     // })
 
     document.getElementById('menuBar').innerHTML = `
             ${cetegoriesData.map(categorie => {
-                return `
+        return `
                 <li class="nav-item">
                     <a class="nav-link" href="#">${categorie.category_name}</a>
                 </li>
                 `
-            }).join('')}
+    }).join('')}
         `
 
-        const cetegoriesMenu = document.querySelectorAll('.cetegoriesMenu li a')
-        cetegoriesMenu.forEach(menu => {
-            console.log(menu)
-    
-            // cetegoriesData.forEach(cate => {
-            //     return cate.category_name
-            // })
-            menu.addEventListener('click', () => {
+    const cetegoriesMenu = document.querySelectorAll('.cetegoriesMenu li a')
+    cetegoriesMenu.forEach(menu => {
+        // console.log(menu)
 
-                document.getElementById('categorieName').innerText = `${menu.innerText ? menu.innerText : 'Breaking News'}`
-                console.log(menu.innerText)
-                cetegoriesData.forEach(cate => {
-                    if(cate.category_name === menu.innerText){
-                        getNewsesData(cate.category_id)
-                    } else {
-                        return false
-                    }
-                })
-               
-                    
-                
-                
+        // cetegoriesData.forEach(cate => {
+        //     return cate.category_name
+        // })
+        document.getElementById('categorieName').innerText = 'Breaking News'
+        menu.addEventListener('click', () => {
+
+            document.getElementById('categorieName').innerText = `${menu.innerText ? menu.innerText : 'Breaking News'}`
+            console.log(menu.innerText)
+            cetegoriesData.forEach(cate => {
+                if (cate.category_name === menu.innerText) {
+                    getNewsesData(cate.category_id)
+                } else {
+                    return false
+                }
             })
 
-            
+
+
+
         })
-    
+
+
+    })
+
 
 }
 
@@ -74,9 +75,9 @@ getCategoriesData()
 
 
 // Newses
-function getNewsesData(category_id){
+function getNewsesData(category_id) {
 
-    
+
 
     let newsUrl = `https://openapi.programming-hero.com/api/news/category/${category_id ? category_id : '01'}`
 
@@ -86,7 +87,7 @@ function getNewsesData(category_id){
 
             displayNewses(data.data)
 
-            if (!data.status){
+            if (!data.status) {
                 const errorMeassage = `You have an error, Error status: ${res.status}`
                 throw new Error(errorMeassage)
             }
@@ -96,10 +97,20 @@ function getNewsesData(category_id){
         .catch(err => console.log(err))
 }
 
-function displayNewses(newsesData){
+function displayNewses(newsesData) {
+
+
+
+    newsesData.sort((a, b) => {
+        return a.total_view - b.total_view
+    })
+    console.log(newsesData.reverse())
+
+
+
 
     document.getElementById('newsQuantity').innerText = `${newsesData.length}`
-    if (newsesData.length == 0){
+    if (newsesData.length == 0) {
         document.getElementById('allNews').innerHTML = `
             <h1 class='text-center'>No Data Found!<h1>
         `
@@ -107,9 +118,9 @@ function displayNewses(newsesData){
         document.getElementById('allNews').innerHTML = `
         ${newsesData.map(news => {
             // console.log(news)
-    
-           
-    
+
+
+
             return `
             <!-- News -->
             <div class="d-flex newses">
@@ -189,14 +200,14 @@ function displayNewses(newsesData){
             </div>
     
             `
-    
+
         }).join('')}
        `
-    
-     
+
+
     }
-    
-    }
+
+}
 
 
 
