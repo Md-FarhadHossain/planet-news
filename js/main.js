@@ -45,10 +45,26 @@ function displayCetegories(cetegoriesData) {
         // cetegoriesData.forEach(cate => {
         //     return cate.category_name
         // })
-        document.getElementById('categorieName').innerText = 'Breaking News'
+        document.getElementById('categorieName').innerText = 'Click on category to get news!'
         menu.addEventListener('click', () => {
 
-            document.getElementById('categorieName').innerText = `${menu.innerText ? menu.innerText : 'Breaking News'}`
+            document.getElementById('allNews').innerHTML = `
+            <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+
+
+          
+            `
+
+            // setTimeout(() => {
+            //     getNewsesData()
+                
+            // },1000)
+
+            document.getElementById('categorieName').innerText = `${menu.innerText ? menu.innerText : 'Click you News'}`
             console.log(menu.innerText)
             cetegoriesData.forEach(cate => {
                 if (cate.category_name === menu.innerText) {
@@ -78,23 +94,27 @@ getCategoriesData()
 function getNewsesData(category_id) {
 
 
-
     let newsUrl = `https://openapi.programming-hero.com/api/news/category/${category_id ? category_id : '01'}`
+    
+
+
 
     fetch(newsUrl)
-        .then(res => res.json())
-        .then(data => {
+    .then(res => res.json())
+    .then(data => {
 
-            displayNewses(data.data)
+        displayNewses(data.data)
 
-            if (!data.status) {
-                const errorMeassage = `You have an error, Error status: ${res.status}`
-                throw new Error(errorMeassage)
-            }
+        if (!data.status) {
+            const errorMeassage = `You have an error, Error status: ${res.status}`
+            throw new Error(errorMeassage)
+        }
 
-            return data
-        })
-        .catch(err => console.log(err))
+        return data
+    })
+    .catch(err => console.log(err))
+
+   
 }
 
 function displayNewses(newsesData) {
@@ -213,4 +233,4 @@ function displayNewses(newsesData) {
 
 
 
-getNewsesData()
+// getNewsesData()
