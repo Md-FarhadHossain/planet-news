@@ -126,7 +126,7 @@ function getNewsesData(category_id) {
 
 function displayNewses(newsesData) {
 
-
+    console.log(newsesData)
 
     newsesData.sort((a, b) => {
         return a.total_view - b.total_view
@@ -186,7 +186,7 @@ function displayNewses(newsesData) {
                         </div>
     
     
-                        <div>
+                    <div>
                            
     
     
@@ -207,7 +207,46 @@ function displayNewses(newsesData) {
                             </div>
     
                             <div class="modal-body">
-                                ${news.details ? news.details : 'No data found'}
+
+                                <div class="newsImg text-center">
+                                    <img src=${news.thumbnail_url} alt="img">
+                                </div>
+
+                                <div class='py-4'>
+                                    ${news.details ? news.details : 'No data found'}
+                                </div>
+
+
+                                
+    
+                        <div class="d-flex justify-content-between align-items-center py-4">
+                                <!-- Author -->
+                         <div class="d-flex justify-content-between align-items-center">
+     
+                             <div class='d-flex align-items-center'>
+                                 <img class='author-img me-3' src=${news.author.img} />
+                                 <div>
+                                     <p class='fw-semibold'>${news.author.name ? news.author.name : 'No name found'}</p>
+                                     <p>${news.author.published_date ? news.author.published_date : 'No date found!'}</p>
+                                 </div>
+                             </div>
+     
+     
+                         </div>
+     
+     
+                         <!-- View -->
+                         <div class="d-flex justify-content-between align-items-center">
+                             <i class="bi bi-eye me-2"></i>
+     
+                             <p class='fw-semibold'>${news.total_view ? news.total_view : 'No View found!'}</p>
+                         </div>
+     
+     
+                     <div>
+    
+    
+                        </div>
                             </div>
                             
                             <div class="modal-footer">
