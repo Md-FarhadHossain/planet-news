@@ -1,6 +1,12 @@
+/*  font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+
 body {
     background-color: #f0f2f5;
     color: #000000;
+    font-family: 'Poppins', sans-serif;
+
 }
 .bodyDesign {
     background: #18191a;
@@ -17,7 +23,16 @@ body {
 }
 
 .blogNavLink {
-    color: #fff !important;
+    color: #fff;
+}
+.main-nav a {
+    background: white;
+    color: #2c2c2c;
+    padding: 0.5rem 1.4rem !important;
+    border-radius: 75.5em;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px #dcdcdc;
 }
 
 article>div {

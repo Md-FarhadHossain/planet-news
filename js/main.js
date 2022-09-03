@@ -1,5 +1,5 @@
 // Categories
-function getCategoriesData() {
+const getCategoriesData = () => {
 
 
     const categoriesUrl = 'https://openapi.programming-hero.com/api/news/categories'
@@ -25,13 +25,9 @@ setTimeout(() => {
     document.getElementById('firstSpinner').classList.add('d-none')
     document.getElementById('getNewsMessage').classList.remove('d-none')
     document.getElementById('getNewsMessage').classList.add('d-block')
-},700)
+}, 700)
 
-function displayCetegories(cetegoriesData) {
-    // console.log(cetegoriesData)
-    // cetegoriesData.forEach(categorieId => {
-    //     getNewsesData(categorieId.category_id)
-    // })
+const displayCetegories = (cetegoriesData) => {
 
     document.getElementById('menuBar').innerHTML = `
             ${cetegoriesData.map(categorie => {
@@ -45,11 +41,7 @@ function displayCetegories(cetegoriesData) {
 
     const cetegoriesMenu = document.querySelectorAll('.cetegoriesMenu li a')
     cetegoriesMenu.forEach(menu => {
-        // console.log(menu)
 
-        // cetegoriesData.forEach(cate => {
-        //     return cate.category_name
-        // })
         document.getElementById('categorieName').innerText = 'Click on category to get news!'
         menu.addEventListener('click', () => {
 
@@ -66,10 +58,6 @@ function displayCetegories(cetegoriesData) {
           
             `
 
-            // setTimeout(() => {
-            //     getNewsesData()
-                
-            // },1000)
 
             document.getElementById('categorieName').innerText = `${menu.innerText ? menu.innerText : 'Click you News'}`
             console.log(menu.innerText)
@@ -98,33 +86,33 @@ getCategoriesData()
 
 
 // Newses
-function getNewsesData(category_id) {
+const getNewsesData = (category_id) => {
 
 
     let newsUrl = `https://openapi.programming-hero.com/api/news/category/${category_id ? category_id : '01'}`
-    
+
 
 
 
     fetch(newsUrl)
-    .then(res => res.json())
-    .then(data => {
+        .then(res => res.json())
+        .then(data => {
 
-        displayNewses(data.data)
+            displayNewses(data.data)
 
-        if (!data.status) {
-            const errorMeassage = `You have an error, Error status: ${res.status}`
-            throw new Error(errorMeassage)
-        }
+            if (!data.status) {
+                const errorMeassage = `You have an error, Error status: ${res.status}`
+                throw new Error(errorMeassage)
+            }
 
-        return data
-    })
-    .catch(err => console.log(err))
+            return data
+        })
+        .catch(err => console.log(err))
 
-   
+
 }
 
-function displayNewses(newsesData) {
+const displayNewses = (newsesData) => {
 
     console.log(newsesData)
 
@@ -144,7 +132,7 @@ function displayNewses(newsesData) {
     } else {
         document.getElementById('allNews').innerHTML = `
         ${newsesData.map(news => {
-            // console.log(news)
+            
 
 
 
@@ -283,7 +271,7 @@ const darkModeSwitch = document.getElementById('dark-mode-switch')
 darkModeSwitch.addEventListener('click', () => {
     const blogBody = document.getElementById('blogBody')
     blogBody.classList.toggle('bodyDesign')
-   
+
 
     document.querySelectorAll('.question').forEach(question => {
         question.classList.toggle('questionTitle')
@@ -299,6 +287,3 @@ darkModeSwitch.addEventListener('click', () => {
     })
 })
 
-
-
-// getNewsesData()
