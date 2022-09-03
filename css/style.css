@@ -1,5 +1,9 @@
+/*  font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
 body {
     background-color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
 }
 
 p {
@@ -52,22 +56,27 @@ p {
     .newses {
         flex-direction: column;
     }
+
     .newsDetails {
         padding: 1rem !important;
     }
+
     .newses {
-        padding: 0 ;
+        padding: 0;
     }
+
     .authorAndView {
         flex-direction: column;
         align-items: flex-start !important;
         padding: 1.5rem 0;
         gap: 0.8rem;
     }
+
     .newsImg {
         text-align: center;
         padding-top: 2rem;
     }
+
     /* .modalBtn {
         display: block;
         padding: 1rem 0;
@@ -80,7 +89,8 @@ p {
     .viewSelectContain {
         flex-direction: column;
     }
-    .viewSelectContain > div {
+
+    .viewSelectContain>div {
         padding: .6rem 0;
     }
 }
